@@ -231,7 +231,8 @@ class AdversaryModel:
         def obj_to_detection(obj: "ObjectState"):
             return BoxDetection(
                 source_identifier="",
-                box=obj.box,
+                data=obj.box,
+                noise=np.array([1, 1, 1, 1, 1, 1]),
                 reference=obj.reference,
                 obj_type=obj.obj_type,
                 score=obj.score,
